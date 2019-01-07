@@ -61,9 +61,9 @@ module.exports = function(options) {
     // Called when we are ready to start the server.
     const start = function() {
       // Start the application.
-      if (fs.existsSync('app')) {
+      if (fs.existsSync('todo')) {
         const application = express();
-        application.use('/', express.static(path.join(__dirname, '/app/dist')));
+        application.use('/', express.static(path.join(__dirname, '/todo/dist')));
         config.appPort = config.appPort || 8080;
         application.listen(config.appPort);
         const appHost = `http://localhost:${config.appPort}`;
